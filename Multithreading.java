@@ -18,7 +18,7 @@ public class Multithreading implements Runnable {
         }
         long a = System.currentTimeMillis();
         for (int i = 0; i < size; i++) {
-            arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
         System.out.println(System.currentTimeMillis() - a);
     }
@@ -31,11 +31,11 @@ public class Multithreading implements Runnable {
         Thread thread = new Thread(new Multithreading());
         thread.start();
         for (int i = 0; i < a2.length; i++) {
-            a2[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            a2[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
 
-        System.arraycopy(a1, 0 , arr, 0, h);
-        System.arraycopy(a2, 0, arr, h,h);
+        System.arraycopy(a1, 0, arr, 0, h);
+        System.arraycopy(a2, 0, arr, h, h);
         System.out.println(System.currentTimeMillis() - a);
 
 
@@ -48,7 +48,7 @@ public class Multithreading implements Runnable {
         System.arraycopy(arr, 0, a1, 0, h);
 
         for (int i = 0; i < a1.length; i++) {
-            a1[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            a1[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
     }
 
