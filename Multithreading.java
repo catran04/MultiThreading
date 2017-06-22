@@ -4,6 +4,8 @@ package homeWorkMultiThreading;
 /**
  * @Autor: Alexey Androsov
  * Comparison of the speed of sequential execution and multithreaded
+ *
+ *
  */
 public class Multithreading implements Runnable {
     final static int size = 10000000;
@@ -20,7 +22,9 @@ public class Multithreading implements Runnable {
         for (int i = 0; i < size; i++) {
             arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
-        System.out.println(System.currentTimeMillis() - a);
+
+        System.out.printf("Выполнение без многопоточности заняло %d мс", (System.currentTimeMillis() - a));
+        System.out.println();
     }
 
     static void multithreading() {
@@ -36,9 +40,7 @@ public class Multithreading implements Runnable {
 
         System.arraycopy(a1, 0, arr, 0, h);
         System.arraycopy(a2, 0, arr, h, h);
-        System.out.println(System.currentTimeMillis() - a);
-
-
+        System.out.printf("Выполнение с использованием многопоточности заняло %d мс", (System.currentTimeMillis() - a));
     }
 
     @Override
